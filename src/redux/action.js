@@ -205,7 +205,8 @@ export const Postdata = (data) =>{
         }
         axios.post(`https://goggle-contact-app.herokuapp.com/users`,data,{headers}).then(res=>{
             dispatch(postdatasuccess(res.data));
-            alert("Contect Added Successfully");
+            dispatch(Getdata())
+            alert("Contact Added Successfully");
         })
         .catch(err=>{
             dispatch(postdatafailure(err));
@@ -222,7 +223,8 @@ export const Putdata = (id,data) =>{
         }
         axios.put(`https://goggle-contact-app.herokuapp.com/users/${id}`,data,{headers}).then(res=>{
             dispatch(putdatasuccess(res.data));
-            alert("Contect Updated Successfully");
+            dispatch(Getdata())
+            alert("Contact Updated Successfully");
         })
         .catch(err=>{
             dispatch(putdatafailure(err));
