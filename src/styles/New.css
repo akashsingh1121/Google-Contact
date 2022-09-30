@@ -1,0 +1,32 @@
+.uppernew{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+    padding: 10px;
+}
+.uppernew Button{
+    margin-top: 160px;
+}
+
+@media only screen and (max-width : 768px){
+    .uppernew{
+        padding: 30px 30px 30px 30px;
+        display: block !important;
+    }
+    .navbar input{
+        display: none;
+        margin-left: 0px;
+    }
+    .uppernew Button{
+        margin-top: 30px;
+        margin-left: 100px;
+    }
+    .uppernew input{
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+    .usericon{
+        margin-left: 60px;
+    }
+}

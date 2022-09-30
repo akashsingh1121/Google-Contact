@@ -1,0 +1,43 @@
+@media only screen and (max-width:768px){
+    .phoneview{
+        display: none;
+    }
+    .navbar{
+        width: 100%;
+        margin-right: 0px;
+    }
+    .export Input{
+        display: none;
+    }
+    
+    .navbar input{
+        display: none;
+        margin-left: 0px;
+    }
+    .profile{
+        width: 40% !important;
+        margin-left: 0px;
+    }   
+}
+@media only screen and (max-width:1180px){
+    
+    .content{
+        margin-left: auto !important;
+    }
+
+}
+
+
+
+ Table{
+    width: 100%;
+ }
+ 
+
+  th, td {
+    background-color: white;
+    padding: 15px 15px 15px 15px;
+    text-align: center;
+    align-items: center;
+  }
+  
