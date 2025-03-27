@@ -172,7 +172,7 @@ const deletedatafailure = (payload) =>{
 export const Getdata = () =>{
     return(dispatch)=>{
         dispatch(getdatarequest());
-        axios("https://contact-backend-teal.vercel.app/users").then(res=>dispatch(getdatasuccess(res.data)))
+        axios("https://contactbackend-k3oa.onrender.com/users").then(res=>dispatch(getdatasuccess(res.data)))
         .catch(err=>dispatch(getdatafailure(err)))
     }
 }
@@ -180,7 +180,7 @@ export const Getdata = () =>{
 export const Singlegetdata = (id) =>{
     return(dispatch)=>{
         dispatch(singledatarequest());
-        axios(`https://contact-backend-teal.vercel.app/users/${id}`).then(res=>dispatch(singledatasuccess(res.data)))
+        axios(`https://contactbackend-k3oa.onrender.com/users/${id}`).then(res=>dispatch(singledatasuccess(res.data)))
         .catch(err=>dispatch(singledatafailure(err)))
     }
 }
@@ -189,7 +189,7 @@ export const Singlegetdata = (id) =>{
 export const Deletedata = (id) =>{
     return(dispatch)=>{
         dispatch(deletedatarequest());
-        axios.delete(`https://contact-backend-teal.vercel.app/users/${id}`).then(res=>{
+        axios.delete(`https://contactbackend-k3oa.onrender.com/users/${id}`).then(res=>{
             dispatch(deletedatasuccess(res.data))
             dispatch(Getdata())
         })
@@ -203,7 +203,7 @@ export const Postdata = (data) =>{
         const headers = {
             "content-type" : "application/json"
         }
-        axios.post(`https://contact-backend-teal.vercel.app/users`,data,{headers}).then(res=>{
+        axios.post(`https://contactbackend-k3oa.onrender.com/users`,data,{headers}).then(res=>{
             dispatch(postdatasuccess(res.data));
             dispatch(Getdata())
             alert("Contact Added Successfully");
@@ -221,7 +221,7 @@ export const Putdata = (id,data) =>{
         const headers = {
             "content-type" : "application/json"
         }
-        axios.put(`https://contact-backend-teal.vercel.app/users/${id}`,data,{headers}).then(res=>{
+        axios.put(`https://contactbackend-k3oa.onrender.com/users/${id}`,data,{headers}).then(res=>{
             dispatch(putdatasuccess(res.data));
             dispatch(Getdata())
             alert("Contact Updated Successfully");
@@ -239,7 +239,7 @@ export const Importdata = (data) =>{
         const headers = {
             "Content-Type": "multipart/form-data",
           }
-        axios.post(`https://contact-backend-teal.vercel.app/upload`,data,{headers}).then(res=>{
+        axios.post(`https://contactbackend-k3oa.onrender.com/upload`,data,{headers}).then(res=>{
             dispatch(importfilesuccess(res.data));
             alert(res.data.results);
             dispatch(Getdata())
@@ -254,7 +254,7 @@ export const Importdata = (data) =>{
 export const Exportdata = () =>{
     return(dispatch)=>{
         dispatch(exportfilerequest());
-        axios.get("https://contact-backend-teal.vercel.app/export").then(res=>dispatch(exportfilesuccess(fileDownload(res.data,"Contact.csv"))))
+        axios.get("https://contactbackend-k3oa.onrender.com/export").then(res=>dispatch(exportfilesuccess(fileDownload(res.data,"Contact.csv"))))
         .catch(err=>dispatch(exportfilefailure(err)))
     }
 }
